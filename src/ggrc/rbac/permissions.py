@@ -21,9 +21,9 @@ class SystemWideRoles(Enum):
 
 
 SYSTEM_WIDE_READ_ROLES = {
-    SystemWideRoles.Administrator,
-    SystemWideRoles.Editor,
-    SystemWideRoles.Reader,
+    SystemWideRoles.Administrator.name,
+    SystemWideRoles.Editor.name,
+    SystemWideRoles.Reader.name,
 }
 
 
