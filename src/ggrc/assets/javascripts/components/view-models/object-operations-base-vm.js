@@ -21,7 +21,7 @@
       }
     },
     showSearch: true,
-    showResults: true,
+    showResults: false,
     type: 'Control', // We set default as Control
     availableTypes: function () {
       var types = GGRC.Mappings.getMappingTypes(
@@ -54,6 +54,8 @@
       return _.findWhere(types, {value: type});
     },
     onSubmit: function () {
+      this.attr('showResults', true);
+      this.attr('showSearch', false);
       this.attr('submitCbs').fire();
     }
   });

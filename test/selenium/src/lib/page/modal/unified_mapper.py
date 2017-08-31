@@ -24,6 +24,7 @@ class CommonUnifiedMapperModal(base.Modal):
     self._add_attr_btn = None
     self.search_result_toggle = base.Toggle(
         driver, self._locators.RESULT_TOGGLE_CSS)
+    self.search_result_toggle.toggle()
 
   def get_available_to_map_obj_aliases(self):
     """Return texts of all objects available to map via UnifiedMapper."""
@@ -81,6 +82,7 @@ class CommonUnifiedMapperModal(base.Modal):
     """Click Search button to search objects according set filters."""
     base.Button(self._driver, self._locators.BUTTON_SEARCH).click()
     selenium_utils.wait_for_js_to_load(self._driver)
+    self.filter_toggle.is_activated = False
 
   def _select_dest_objs_to_map(self, objs_titles):
     """Select checkboxes regarding to titles from list of checkboxes

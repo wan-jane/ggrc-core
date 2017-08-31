@@ -103,7 +103,6 @@
       },
       setItems: function () {
         var self = this;
-        this.attr('items').replace([]);
         return self.load()
           .then(function (items) {
             self.attr('items', items);
